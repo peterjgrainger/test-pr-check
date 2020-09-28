@@ -19,7 +19,7 @@ jobs:
       # Runs a single command using the runners shell
       - name: verify if this PR meets all the checks
         id: prCheck
-        uses: arup-group/action-check-pr-state
+        uses: arup-group/action-check-pr-state@main
         with:
           requiredReviews: 1
         env:
