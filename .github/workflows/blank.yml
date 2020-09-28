@@ -31,7 +31,9 @@ jobs:
         run: sleep 10
           
       - uses: actions-ecosystem/action-create-comment@v1
-        if: ${{ steps.approved.outputs.approvedReviews == 1 }}
+        if: steps.prCheck.outputs.pullRequestToRerun
         with:
+          repo: peterjgrainger/test-pr-check
+          number: ${{ steps.prCheck.outputs.pullRequestToRerun }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
           body: /azp run All Projects
