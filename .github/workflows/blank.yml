@@ -22,8 +22,8 @@ jobs:
         if: steps.prCheck.outputs.pullRequestToRerun
         uses: Hatzelencio/merge-branch@v0.0.1
         with:
-          head: ${{ steps.prCheck.outputs.headRef }}
-          base: ${{ steps.prCheck.outputs.baseRef }}
+          head: ${{ steps.prCheck.outputs.baseRef }}
+          base: ${{ steps.prCheck.outputs.headRef }}
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
           
