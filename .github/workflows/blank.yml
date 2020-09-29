@@ -2,7 +2,8 @@
 name: Scheduled All Projects Trigger
 
 on:
-  workflow_dispatch:
+  schedule:
+    - cron: '0 * * * *'
 
 jobs:
   trigger:
